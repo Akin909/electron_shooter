@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=VT323');
+body{
+    background:url('title-bg.jpg');
+/* url('http://wallpapercave.com/wp/1I3yb5l.jpg'); */
+    background-size: cover;
+    font-family: 'VT323', monospace;
+    margin: 0;
+}
+.title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 3em;
+    color: #00FF00;
+    text-shadow: -2px 3px 2px #191919;
+    width: 100%;
+    background:hsla(0, 0%, 100%, 0.6);
+    margin: 0, 0;
+    -webkit-box-shadow: -4px 9px 10px -4px rgba(0,0,0,0.6);
+    -moz-box-shadow: -4px 9px 10px -4px rgba(0,0,0,0.6);
+    box-shadow: -4px 9px 10px -4px rgba(0,0,0,0.6);
+    background-size: cover;
+
+}
+.title>h1{
+    margin: 0;
+    padding: 0.7em;
+}
+#fpsDisplay{
+    font-size: 1em;
+    color: black;
+    background: #999999;
+    height: 2em;
+    width: 5%;
+    padding: 0.4em;
+    position: relative;
+    margin: 1em auto;
+}
+.game-container{
+    margin-top: 1em;
+    width:100%;
+    position: relative;
+}
+.buttons{
+    text-align: center;
+    margin: 0.5em;
+}
+.buttons>button{
+    font-family: 'VT323', monospace;
+    font-size: 1.5em;
+    width: 5rem;
+    height: 5rem;
+    border-radius:50%;
+    border: 0px solid;
+    -webkit-box-shadow: -4px 2px 0px -1px rgba(145,142,145,1);
+    -moz-box-shadow: -4px 2px 0px -1px rgba(145,142,145,1);
+    box-shadow: -4px 2px 0px -1px rgba(51, 51, 51,1);
+    background: #FF0000;
+    color: white;
+    text-shadow: 1px 1px 0px black;
+}
+#canvas{
+    display: block;
+    margin: 0 auto;
+    background: url('second-space.jpg');
+    background-size: cover;
+    /* height: 40%; */
+    /* width:1000px; */
+}
+.help{
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    float: bottom;
+    width: 80%;
+    background: #E6E6E6;
+    padding: 0.5em;
+    text-align: center;
+}
+.instruct{
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 0 1em 0;
+}
+
+.instruct>li{
+    width:40%;
+    margin:0 auto;
+
+
+    }
