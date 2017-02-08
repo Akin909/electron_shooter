@@ -193,8 +193,8 @@ function generateExplosion(delta) {
 
 
 function update(delta) {
-	//Adding array length stops player from shooting endlessly
-	if (keyStatus.spacebar && playerBullets.length < 7) {
+	//Adding array length stops player from shooting endlessly - && playerBullets.length < 7
+	if (keyStatus.spacebar) {
 		player.shoot();
 	}
 	//Conditionals stops player from moving of the canvas
@@ -351,13 +351,6 @@ function Enemy(I) {
 			// ctx.fillRect(this.x, this.y, this.width, this.height);
 	};
 
-	I.update = function(delta) {
-		I.x += I.xVelocity * delta;
-		I.y += I.yVelocity * delta;
-
-		I.xVelocity = 0.3 * Math.sin(I.age * Math.PI / 64);
-
-		I.age++;
 		I.explode = function() {
 			if (this) {
 				explosion.currentTime = 0;
@@ -369,6 +362,13 @@ function Enemy(I) {
 				return;
 			}
 		}
+	I.update = function(delta) {
+		I.x += I.xVelocity * delta;
+		I.y += I.yVelocity * delta;
+
+		I.xVelocity = 0.3 * Math.sin(I.age * Math.PI / 64);
+
+		I.age++;
 		I.active = I.active && I.inBounds();
 	};
 
@@ -386,7 +386,7 @@ function handleCollisions() {
 	playerBullets.forEach(function(bullet) {
 		enemies.forEach(function(enemy) {
 			if (enemy && bullet && collides(bullet, enemy)) {
-				enemy.explode();
+				enemy.explode.call(enemy);
 				bullet.active = false;
 				if (player.active && running) {
 					score += 1
