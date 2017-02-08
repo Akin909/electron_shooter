@@ -350,7 +350,11 @@ function Enemy(I) {
 			// ctx.fillStyle = this.color;
 			// ctx.fillRect(this.x, this.y, this.width, this.height);
 	};
-
+	//This function was causing a bug when placed within the update function as it
+	//did not exist unless update was being called i.e. it only existed within the
+	//scope of update however it now exists within the constructor and is called
+	//with call and its this is bound to the context of the enemy at the time of
+	//the call
 		I.explode = function() {
 			if (this) {
 				explosion.currentTime = 0;
